@@ -1,9 +1,9 @@
 # Shoestrap
 
-Shoestrap is a simple framework to bootstrap *nix machines.
+Shoestrap is a simple ~~Bash~~ Python framework to bootstrap *nix machines.
 
-This is a fork of https://github.com/cmer/shoestrap, but uses Python2.7
-I did think because I liked shoestrap, but don't really enjoy bash.
+This is a fork of https://github.com/cmer/shoestrap, but uses Python2.7 instead of bash.
+I did this because I liked shoestrap, but don't really enjoy bash.
 Python2.7 is installed by default on most *nix machines, so there
 should be no issue using it.
 
@@ -35,7 +35,7 @@ cookbooks per project.
 
 Recipes are snippets of Bash code that can be executed from a Cookbook. For
 example, you may have a recipe to install `memcached`, or a recipe to setup
-SSH keys on the target machine. Remember, it's just Bash, so anything goes.
+SSH keys on the target machine. Remember, it's just ~~Bash~~ Python, so anything goes.
 
 ### Assets
 
@@ -111,7 +111,7 @@ Sets an element as 'installed'.
 
 ## Example
 
-You can see a sample project at http://github.com/cmer/shoestrap-example
+You can see a sample project in this repo.
 
 Browse the source code, it's the best way to familiarize yourself with Shoestrap. It's also a great starting
 point for your own Shoestrap project.
@@ -143,6 +143,6 @@ point for your own Shoestrap project.
 
 ## Compatibility
 
-Shoestrap has only been tested with Ubuntu Oneiric 11.10 but should work with any/most Unix-like
+Shoestrap has only been tested with Ubuntu 16.04 but *might* work with any/most Unix-like
 operating systems. My goal is to support Ubuntu/Debian, CentOS/Red Hat and Mac OS X. I will need
 help from the community to achieve this, however.
