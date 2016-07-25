@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+version = args[0]
+user = args[1]
+
+if not is_installed('ruby:' + version + ':' + user):
+  run_as(user, "source /home/deploy/.rbenv.profile; rbenv install %s; rbenv global %s; rbenv rehash" % (version, version))
+  run_as(user, 'echo "gem: --no-ri --no-rdoc" > /home/%s/.gemrc; chown %s:%s /home/%s/.gemrc' % (user, user, user, user))
+  run_as(user, "source /home/%s/.rbenv.profile; gem install bundler" % user)
+  set_installed('ruby:' + version + ':' + user)

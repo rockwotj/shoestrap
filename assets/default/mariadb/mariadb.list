@@ -1,0 +1,4 @@
+# MariaDB 10.1 repository list - created 2016-07-25 03:31 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+deb [arch=amd64,i386] https://mirrors.evowise.com/mariadb/repo/10.1/ubuntu xenial main
+deb-src https://mirrors.evowise.com/mariadb/repo/10.1/ubuntu xenial main

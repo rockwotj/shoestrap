@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+user = args[0]
+
+if not is_installed('customize_bash:' + user):
+  add_line("force_color_prompt=yes", "/home/%s/.bashrc" % user)
+  set_installed('customize_bash:' + user)

@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+
+user = args[0]
+
+if not is_installed('setup_keys:' + user):
+  print user
+  print '/home/', user, '/.ssh'
+  dir = '/home/%s/.ssh' % user
+  run('mkdir -p ' + dir)
+  copy('authorized_keys', dir)
+  copy('known_hosts', dir)
+  run('chown -R %s:%s %s' % (user, user, dir))
+  set_installed('setup_keys:' + user)

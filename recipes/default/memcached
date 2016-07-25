@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+version = args[0]
+
+if not version:
+  error('Must specify memcached version!')
+
+if not is_installed('memcached:' + version):
+  add_user('memcached', no_home=True)
+  package('libevent-dev')
+  cd('/tmp')
+  run('curl -O http://memcached.googlecode.com/files/memcached-%s.tar.gz' % version)
+  run('tar xzvf memcached-%s.tar.gz' % version)
+  cd('memcached-' + version)
+  run('./configure')
+  run('make')
+  run('make install')
+
+  run('mkdir -p /etc/default/')
+  run("echo 'ENABLE_MEMCACHED=yes' > /etc/default/memcached")
+  copy('memcached.conf', '/etc/')
+  copy('memcached-init', '/etc/init.d/memcached')
+  run('chmod +x /etc/init.d/memcached')
+  run('update-rc.d memcached defaults')
+  set_installed('memcached:' + version)

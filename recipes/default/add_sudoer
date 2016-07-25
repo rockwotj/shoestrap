@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+user = args[0]
+
+if not user:
+  error('sudoer requires a user')
+
+if not is_installed('sudoer:' + user):
+  add_line(user + " ALL=(ALL) NOPASSWD:ALL", '/etc/sudoers')
+  set_installed('sudoer:' + user)

@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env python
 
 ##############################################################################
-# Add your custom helpers here. Remember, this is just Bash!
+# Add your custom helpers here. Remember, this is just Python!
 ##############################################################################

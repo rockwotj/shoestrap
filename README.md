@@ -2,8 +2,10 @@
 
 Shoestrap is a simple framework to bootstrap *nix machines.
 
-It speaks Bash so there's virtually no learning curve. More importantly, you
-won't have to learn yet another DSL. Shoestrap aims to get out of your way.
+This is a fork of https://github.com/cmer/shoestrap, but uses Python2.7
+I did think because I liked shoestrap, but don't really enjoy bash.
+Python2.7 is installed by default on most *nix machines, so there
+should be no issue using it.
 
 You should be able to get up and running in minutes, not hours.
 
@@ -11,9 +13,6 @@ You should be able to get up and running in minutes, not hours.
 ## What about Chef, Puppet and co.?
 
 Chef and Puppet are great tools, but they are too complex for most use cases.
-The learning curve for these tools is quite steep as they each have their own
-DSL. On the other end, Shoestrap is just Bash. It does not require any
-'Bash to config files' translation.
 
 I believe Shoestrap is a great simple alternative to Chef or Puppet that will
 fulfill the needs of most people.
@@ -42,7 +41,6 @@ SSH keys on the target machine. Remember, it's just Bash, so anything goes.
 
 An asset is a file that will be needed by the target machine. For example,
 a configuration file or an init script.
-
 
 ## Helpers
 
